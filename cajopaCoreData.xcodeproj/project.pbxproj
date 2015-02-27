@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87DB8BAF1AA02C3400CA44D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DB8BAE1AA02C3400CA44D1 /* AppDelegate.m */; };
+		87DB8BB11AA02C3400CA44D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DB8BB01AA02C3400CA44D1 /* main.m */; };
+		87DB8BB41AA02C3400CA44D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DB8BB31AA02C3400CA44D1 /* ViewController.m */; };
+		87DB8BB71AA02C3400CA44D1 /* cajopaCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87DB8BB51AA02C3400CA44D1 /* cajopaCoreData.xcdatamodeld */; };
+		87DB8BB91AA02C3400CA44D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87DB8BB81AA02C3400CA44D1 /* Images.xcassets */; };
+		87DB8BBC1AA02C3500CA44D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87DB8BBA1AA02C3500CA44D1 /* Main.storyboard */; };
+		87DB8BC81AA02C3500CA44D1 /* cajopaCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DB8BC71AA02C3500CA44D1 /* cajopaCoreDataTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		87DB8BC21AA02C3500CA44D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87DB8BA01AA02C3400CA44D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87DB8BA71AA02C3400CA44D1;
+			remoteInfo = cajopaCoreData;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		87DB8BA81AA02C3400CA44D1 /* cajopaCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cajopaCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87DB8BAC1AA02C3400CA44D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87DB8BAD1AA02C3400CA44D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		87DB8BAE1AA02C3400CA44D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		87DB8BB01AA02C3400CA44D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		87DB8BB21AA02C3400CA44D1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		87DB8BB31AA02C3400CA44D1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		87DB8BB61AA02C3400CA44D1 /* cajopaCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cajopaCoreData.xcdatamodel; sourceTree = "<group>"; };
+		87DB8BB81AA02C3400CA44D1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		87DB8BBB1AA02C3500CA44D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		87DB8BC11AA02C3500CA44D1 /* cajopaCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cajopaCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87DB8BC61AA02C3500CA44D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87DB8BC71AA02C3500CA44D1 /* cajopaCoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cajopaCoreDataTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87DB8BA51AA02C3400CA44D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87DB8BBE1AA02C3500CA44D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87DB8B9F1AA02C3400CA44D1 = {
+			isa = PBXGroup;
+			children = (
+				87DB8BAA1AA02C3400CA44D1 /* cajopaCoreData */,
+				87DB8BC41AA02C3500CA44D1 /* cajopaCoreDataTests */,
+				87DB8BA91AA02C3400CA44D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		87DB8BA91AA02C3400CA44D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87DB8BA81AA02C3400CA44D1 /* cajopaCoreData.app */,
+				87DB8BC11AA02C3500CA44D1 /* cajopaCoreDataTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87DB8BAA1AA02C3400CA44D1 /* cajopaCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				87DB8BAD1AA02C3400CA44D1 /* AppDelegate.h */,
+				87DB8BAE1AA02C3400CA44D1 /* AppDelegate.m */,
+				87DB8BB21AA02C3400CA44D1 /* ViewController.h */,
+				87DB8BB31AA02C3400CA44D1 /* ViewController.m */,
+				87DB8BB81AA02C3400CA44D1 /* Images.xcassets */,
+				87DB8BBA1AA02C3500CA44D1 /* Main.storyboard */,
+				87DB8BB51AA02C3400CA44D1 /* cajopaCoreData.xcdatamodeld */,
+				87DB8BAB1AA02C3400CA44D1 /* Supporting Files */,
+			);
+			path = cajopaCoreData;
+			sourceTree = "<group>";
+		};
+		87DB8BAB1AA02C3400CA44D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				87DB8BAC1AA02C3400CA44D1 /* Info.plist */,
+				87DB8BB01AA02C3400CA44D1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87DB8BC41AA02C3500CA44D1 /* cajopaCoreDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				87DB8BC71AA02C3500CA44D1 /* cajopaCoreDataTests.m */,
+				87DB8BC51AA02C3500CA44D1 /* Supporting Files */,
+			);
+			path = cajopaCoreDataTests;
+			sourceTree = "<group>";
+		};
+		87DB8BC51AA02C3500CA44D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				87DB8BC61AA02C3500CA44D1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87DB8BA71AA02C3400CA44D1 /* cajopaCoreData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87DB8BCB1AA02C3500CA44D1 /* Build configuration list for PBXNativeTarget "cajopaCoreData" */;
+			buildPhases = (
+				87DB8BA41AA02C3400CA44D1 /* Sources */,
+				87DB8BA51AA02C3400CA44D1 /* Frameworks */,
+				87DB8BA61AA02C3400CA44D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cajopaCoreData;
+			productName = cajopaCoreData;
+			productReference = 87DB8BA81AA02C3400CA44D1 /* cajopaCoreData.app */;
+			productType = "com.apple.product-type.application";
+		};
+		87DB8BC01AA02C3500CA44D1 /* cajopaCoreDataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87DB8BCE1AA02C3500CA44D1 /* Build configuration list for PBXNativeTarget "cajopaCoreDataTests" */;
+			buildPhases = (
+				87DB8BBD1AA02C3500CA44D1 /* Sources */,
+				87DB8BBE1AA02C3500CA44D1 /* Frameworks */,
+				87DB8BBF1AA02C3500CA44D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87DB8BC31AA02C3500CA44D1 /* PBXTargetDependency */,
+			);
+			name = cajopaCoreDataTests;
+			productName = cajopaCoreDataTests;
+			productReference = 87DB8BC11AA02C3500CA44D1 /* cajopaCoreDataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87DB8BA01AA02C3400CA44D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Parker, Carl (HBO)";
+				TargetAttributes = {
+					87DB8BA71AA02C3400CA44D1 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					87DB8BC01AA02C3500CA44D1 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 87DB8BA71AA02C3400CA44D1;
+					};
+				};
+			};
+			buildConfigurationList = 87DB8BA31AA02C3400CA44D1 /* Build configuration list for PBXProject "cajopaCoreData" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 87DB8B9F1AA02C3400CA44D1;
+			productRefGroup = 87DB8BA91AA02C3400CA44D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87DB8BA71AA02C3400CA44D1 /* cajopaCoreData */,
+				87DB8BC01AA02C3500CA44D1 /* cajopaCoreDataTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87DB8BA61AA02C3400CA44D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87DB8BB91AA02C3400CA44D1 /* Images.xcassets in Resources */,
+				87DB8BBC1AA02C3500CA44D1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87DB8BBF1AA02C3500CA44D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87DB8BA41AA02C3400CA44D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87DB8BB71AA02C3400CA44D1 /* cajopaCoreData.xcdatamodeld in Sources */,
+				87DB8BB41AA02C3400CA44D1 /* ViewController.m in Sources */,
+				87DB8BB11AA02C3400CA44D1 /* main.m in Sources */,
+				87DB8BAF1AA02C3400CA44D1 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87DB8BBD1AA02C3500CA44D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87DB8BC81AA02C3500CA44D1 /* cajopaCoreDataTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		87DB8BC31AA02C3500CA44D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87DB8BA71AA02C3400CA44D1 /* cajopaCoreData */;
+			targetProxy = 87DB8BC21AA02C3500CA44D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		87DB8BBA1AA02C3500CA44D1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87DB8BBB1AA02C3500CA44D1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		87DB8BC91AA02C3500CA44D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		87DB8BCA1AA02C3500CA44D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		87DB8BCC1AA02C3500CA44D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = cajopaCoreData/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		87DB8BCD1AA02C3500CA44D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = cajopaCoreData/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		87DB8BCF1AA02C3500CA44D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = cajopaCoreDataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cajopaCoreData.app/Contents/MacOS/cajopaCoreData";
+			};
+			name = Debug;
+		};
+		87DB8BD01AA02C3500CA44D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = cajopaCoreDataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cajopaCoreData.app/Contents/MacOS/cajopaCoreData";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87DB8BA31AA02C3400CA44D1 /* Build configuration list for PBXProject "cajopaCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87DB8BC91AA02C3500CA44D1 /* Debug */,
+				87DB8BCA1AA02C3500CA44D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87DB8BCB1AA02C3500CA44D1 /* Build configuration list for PBXNativeTarget "cajopaCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87DB8BCC1AA02C3500CA44D1 /* Debug */,
+				87DB8BCD1AA02C3500CA44D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		87DB8BCE1AA02C3500CA44D1 /* Build configuration list for PBXNativeTarget "cajopaCoreDataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87DB8BCF1AA02C3500CA44D1 /* Debug */,
+				87DB8BD01AA02C3500CA44D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		87DB8BB51AA02C3400CA44D1 /* cajopaCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				87DB8BB61AA02C3400CA44D1 /* cajopaCoreData.xcdatamodel */,
+			);
+			currentVersion = 87DB8BB61AA02C3400CA44D1 /* cajopaCoreData.xcdatamodel */;
+			path = cajopaCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 87DB8BA01AA02C3400CA44D1 /* Project object */;
+}
