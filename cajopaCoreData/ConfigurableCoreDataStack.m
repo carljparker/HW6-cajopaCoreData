@@ -8,10 +8,10 @@
 
 @implementation CoreDataStackConfiguration
 
-- (instancetype)init
-{
-    @throw [NSString stringWithFormat:@"use method: %@", NSStringFromSelector(@selector(initWithConfigurator:))];
-}
+//- (instancetype)init
+//{
+//    @throw [NSString stringWithFormat:@"use method: %@", NSStringFromSelector(@selector(initWithConfigurator:))];
+//}
 
 -(instancetype)initWithConfigurator:(id<StackConfigurator>)config
 {
@@ -119,5 +119,11 @@
     _managedObjectContext = moc;
     
 }
+
+-(void)killCoreDataStack
+{
+    [[NSFileManager defaultManager] removeItemAtURL:[self dataFileURL] error:nil];
+}
+
 
 @end

@@ -39,4 +39,7 @@
 +(instancetype)stackWithConfiguration:(CoreDataStackConfiguration*)configuration;
 +(instancetype)stackWithConfigurator:(id<StackConfigurator>)configurator;
 @property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+
+-(void)killCoreDataStack;
+
 @end
