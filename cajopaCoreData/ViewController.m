@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ConfigurableCoreDataStack.h"
 #import "Item.h"
+#import "Tag.h"
 
 @implementation ViewController
 
@@ -29,9 +30,17 @@
     
     NSManagedObjectContext *moc = stack.managedObjectContext;
     
+    // Create an NSManagedObject . . .
     Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:moc];
     
     item.title = @"cool toy";
+    
+    Tag *tag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:moc];
+    tag.name = @"lego";
+    
+    NSArray * tagArray = @[ tag ];
+    
+    [item addTags:[NSSet setWithArray:tagArray]];
     
     NSError *saveError = nil;
     
@@ -41,16 +50,16 @@
         [[NSApplication sharedApplication] presentError:saveError];
     }
     
-    NSLog(@"%@", item);
-    
     NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
     NSError *fetchError = nil;
     
     NSArray *allitems = [moc executeFetchRequest:fr error:&fetchError];
     
-    NSLog( @"%@", allitems);
-    
     for (Item *singleItem in allitems) {
+        NSLog(@"%@", singleItem.title);
+        for (Tag *singleTag in singleItem.tags) {
+            NSLog( @"%@", singleTag.name);
+        }
         [moc deleteObject:singleItem];
     }
     
