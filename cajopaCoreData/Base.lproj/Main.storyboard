@@ -697,7 +697,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="MyG-uA-psH">
+                                                        <tableCellView identifier="Cell" id="MyG-uA-psH">
                                                             <rect key="frame" x="1" y="1" width="297" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
