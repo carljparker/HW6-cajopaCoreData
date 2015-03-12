@@ -38,9 +38,6 @@
     
     // Create an NSManagedObject . . .
     Item *item = [Item itemWithTitle:@"cool toy" managedObjectContext:self.moc];
-//    Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:self.moc];
-    
-//    item.title = @"cool toy";
     
     Tag *tag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:self.moc];
     tag.name = @"lego";
