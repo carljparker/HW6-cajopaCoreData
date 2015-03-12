@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ConfigurableCoreDataStack.h"
+#import "ItemList.h"
 #import "Item.h"
 #import "Tag.h"
 
@@ -23,6 +24,9 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
+    
+    // Create our list to manage the items
+    ItemList * carlsList = [ItemList itemListWithTitle:@"Carl's List"];
     
         
     CoreDataStackConfiguration *config = [CoreDataStackConfiguration new];
@@ -46,6 +50,11 @@
     
     [item addTags:[NSSet setWithArray:tagArray]];
     
+    [carlsList addItem:item];
+    
+    NSLog(@"%@", [carlsList itemTitles]);
+    
+    // save the moc to persistent storage
     NSError *saveError = nil;
     
     BOOL success = [self.moc save:&saveError];
