@@ -13,5 +13,7 @@
 
 @property (nonatomic, readonly) NSManagedObjectContext *moc;
 
+@property (weak) IBOutlet NSTableView *itemListTable;
+
 @end
 

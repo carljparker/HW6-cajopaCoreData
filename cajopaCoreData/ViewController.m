@@ -15,6 +15,7 @@
 @interface ViewController ()
 
 @property (nonatomic, readwrite) NSManagedObjectContext *moc;
+@property (nonatomic, readwrite) ItemList *carlsList;
 
 @end
 
@@ -26,8 +27,10 @@
     // Do any additional setup after loading the view.
     
     // Create our list to manage the items
-    ItemList * carlsList = [ItemList itemListWithTitle:@"Carl's List"];
+    self.carlsList = [ItemList itemListWithTitle:@"Carl's List"];
     
+    self.itemListTable.delegate = self;
+    self.itemListTable.dataSource = self;
         
     CoreDataStackConfiguration *config = [CoreDataStackConfiguration new];
     config.storeType = NSSQLiteStoreType;
@@ -50,9 +53,9 @@
     
     [item addTags:[NSSet setWithArray:tagArray]];
     
-    [carlsList addItem:item];
+    [self.carlsList addItem:item];
     
-    NSLog(@"%@", [carlsList itemTitles]);
+    NSLog(@"%@", [self.carlsList itemTitles]);
     
     // save the moc to persistent storage
     NSError *saveError = nil;
@@ -82,27 +85,27 @@
 
 }
 
-//- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
-//{
-//    // For this to work, Table Cell View in Main.storyboard
-//    // must have Identity | Identifier set to "Cell"
-//    NSTableCellView *cell = [tableView makeViewWithIdentifier:@"Cell" owner:nil];
-//    
-//    NSLog(@"%@", [self.toDoList itemTitles][row]);
-//    
-//    cell.textField.stringValue = [self.toDoList itemTitles][row];
-//    return cell;
-//}
-//
-//- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
-//{
-//    return [self.toDoList itemCount];
-//}
-//
-//- (void)setRepresentedObject:(id)representedObject {
-//    [super setRepresentedObject:representedObject];
-//
-//    // Update the view, if already loaded.
-//}
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    // For this to work, Table Cell View in Main.storyboard
+    // must have Identity | Identifier set to "Cell"
+    NSTableCellView *cell = [tableView makeViewWithIdentifier:@"Cell" owner:nil];
+    
+    NSLog(@"%@", [self.carlsList itemTitles][row]);
+    
+    cell.textField.stringValue = [self.carlsList itemTitles][row];
+    return cell;
+}
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+    return [self.carlsList itemCount];
+}
+
+- (void)setRepresentedObject:(id)representedObject {
+    [super setRepresentedObject:representedObject];
+
+    // Update the view, if already loaded.
+}
 
 @end
