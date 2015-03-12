@@ -35,7 +35,8 @@
 - (void)removeTags:(NSSet *)values;
 
 // methods (additional)
-+(instancetype)itemWithTitle:(NSString *)title;
++(instancetype)itemWithTitle:(NSString *)title
+        managedObjectContext:(NSManagedObjectContext *)moc;
 
 
 @end

@@ -29,9 +29,9 @@
     
     item.title = title;
     
-    Tag *tag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:moc];
-    tag.name = @"lego";
-    
+//    Tag *tag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:moc];
+//    tag.name = @"lego";
+//    
     return item;
 }
 
