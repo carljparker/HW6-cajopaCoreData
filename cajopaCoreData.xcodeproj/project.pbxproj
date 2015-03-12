@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		870210E31AB1D60C00E37F87 /* ItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 870210E21AB1D60C00E37F87 /* ItemList.m */; };
 		87C31ED21AAAB03E00C7A90B /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C31ED11AAAB03E00C7A90B /* Item.m */; };
 		87C31ED51AAAB2E800C7A90B /* ConfigurableCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C31ED41AAAB2E800C7A90B /* ConfigurableCoreDataStack.m */; };
 		87C31ED81AADE34900C7A90B /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C31ED71AADE34900C7A90B /* Tag.m */; };
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		870210E11AB1D60C00E37F87 /* ItemList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemList.h; sourceTree = "<group>"; };
+		870210E21AB1D60C00E37F87 /* ItemList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemList.m; sourceTree = "<group>"; };
 		87C31ED01AAAB03E00C7A90B /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		87C31ED11AAAB03E00C7A90B /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		87C31ED31AAAB2E800C7A90B /* ConfigurableCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurableCoreDataStack.h; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 				87C31ED71AADE34900C7A90B /* Tag.m */,
 				87C31ED01AAAB03E00C7A90B /* Item.h */,
 				87C31ED11AAAB03E00C7A90B /* Item.m */,
+				870210E11AB1D60C00E37F87 /* ItemList.h */,
+				870210E21AB1D60C00E37F87 /* ItemList.m */,
 				87DB8BAB1AA02C3400CA44D1 /* Supporting Files */,
 			);
 			path = cajopaCoreData;
@@ -233,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870210E31AB1D60C00E37F87 /* ItemList.m in Sources */,
 				87C31ED21AAAB03E00C7A90B /* Item.m in Sources */,
 				87DB8BB71AA02C3400CA44D1 /* cajopaCoreData.xcdatamodeld in Sources */,
 				87DB8BB41AA02C3400CA44D1 /* ViewController.m in Sources */,
