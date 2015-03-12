@@ -30,7 +30,7 @@
 // create and insert item if OK
 -(void) addItem:(NSString*) item {
     
-    NSUInteger currentCount = [_theList count];
+    NSUInteger currentCount = [self.theList count];
         
     [self.theList addObject:item];
     

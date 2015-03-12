@@ -55,7 +55,9 @@
     
     [self.carlsList addItem:item];
     
-    NSLog(@"%@", [self.carlsList itemTitles]);
+    [self.itemListTable reloadData];
+    
+    NSLog(@"ViewDidLoad: %@", [self.carlsList itemTitles]);
     
     // save the moc to persistent storage
     NSError *saveError = nil;
