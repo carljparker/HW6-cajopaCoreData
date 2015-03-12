@@ -66,22 +66,22 @@
         [[NSApplication sharedApplication] presentError:saveError];
     }
     
-    NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
-    NSError *fetchError = nil;
-    
-    NSArray *allitems = [self.moc executeFetchRequest:fr error:&fetchError];
-    
-    for (Item *singleItem in allitems) {
-        NSLog(@"%@", singleItem.title);
-        for (Tag *singleTag in singleItem.tags) {
-            NSLog( @"%@", singleTag.name);
-        }
-        [self.moc deleteObject:singleItem];
-    }
-    
-    [self.moc save:nil];
-    
-    [stack killCoreDataStack];
+//    NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+//    NSError *fetchError = nil;
+//    
+//    NSArray *allitems = [self.moc executeFetchRequest:fr error:&fetchError];
+//    
+//    for (Item *singleItem in allitems) {
+//        NSLog(@"%@", singleItem.title);
+//        for (Tag *singleTag in singleItem.tags) {
+//            NSLog( @"%@", singleTag.name);
+//        }
+//        [self.moc deleteObject:singleItem];
+//    }
+//    
+//    [self.moc save:nil];
+//    
+//    [stack killCoreDataStack];
 
 }
 
