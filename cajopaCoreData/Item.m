@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Parker, Carl (HBO). All rights reserved.
 //
 
+@import CoreData;
+#import "Tag.h"
 #import "Item.h"
 
 
@@ -19,5 +21,18 @@
 @dynamic uuid;
 @dynamic images;
 @dynamic tags;
+
++(instancetype)itemWithTitle:(NSString *)title
+        managedObjectContext: (NSManagedObjectContext *) moc
+{
+    Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:moc];
+    
+    item.title = title;
+    
+    Tag *tag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:moc];
+    tag.name = @"lego";
+    
+    return item;
+}
 
 @end

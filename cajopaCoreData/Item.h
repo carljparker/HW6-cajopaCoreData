@@ -34,4 +34,8 @@
 - (void)addTags:(NSSet *)values;
 - (void)removeTags:(NSSet *)values;
 
+// methods (additional)
++(instancetype)itemWithTitle:(NSString *)title;
+
+
 @end

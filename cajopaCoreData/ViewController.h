@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ConfigurableCoreDataStack.h"
 
 @interface ViewController : NSViewController
 
+@property (nonatomic, readonly) NSManagedObjectContext *moc;
 
 @end
 

@@ -11,6 +11,12 @@
 #import "Item.h"
 #import "Tag.h"
 
+@interface ViewController ()
+
+@property (nonatomic, readwrite) NSManagedObjectContext *moc;
+
+@end
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -28,14 +34,14 @@
     
     ConfigurableCoreDataStack *stack = [[ConfigurableCoreDataStack alloc] initWithConfiguration:config];
     
-    NSManagedObjectContext *moc = stack.managedObjectContext;
+    self.moc = stack.managedObjectContext;
     
     // Create an NSManagedObject . . .
-    Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:moc];
+    Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:self.moc];
     
     item.title = @"cool toy";
     
-    Tag *tag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:moc];
+    Tag *tag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:self.moc];
     tag.name = @"lego";
     
     NSArray * tagArray = @[ tag ];
@@ -44,7 +50,7 @@
     
     NSError *saveError = nil;
     
-    BOOL success = [moc save:&saveError];
+    BOOL success = [self.moc save:&saveError];
     
     if (!success){
         [[NSApplication sharedApplication] presentError:saveError];
@@ -53,26 +59,43 @@
     NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
     NSError *fetchError = nil;
     
-    NSArray *allitems = [moc executeFetchRequest:fr error:&fetchError];
+    NSArray *allitems = [self.moc executeFetchRequest:fr error:&fetchError];
     
     for (Item *singleItem in allitems) {
         NSLog(@"%@", singleItem.title);
         for (Tag *singleTag in singleItem.tags) {
             NSLog( @"%@", singleTag.name);
         }
-        [moc deleteObject:singleItem];
+        [self.moc deleteObject:singleItem];
     }
     
-    [moc save:nil];
+    [self.moc save:nil];
     
     [stack killCoreDataStack];
 
 }
 
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
-}
+//- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+//{
+//    // For this to work, Table Cell View in Main.storyboard
+//    // must have Identity | Identifier set to "Cell"
+//    NSTableCellView *cell = [tableView makeViewWithIdentifier:@"Cell" owner:nil];
+//    
+//    NSLog(@"%@", [self.toDoList itemTitles][row]);
+//    
+//    cell.textField.stringValue = [self.toDoList itemTitles][row];
+//    return cell;
+//}
+//
+//- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+//{
+//    return [self.toDoList itemCount];
+//}
+//
+//- (void)setRepresentedObject:(id)representedObject {
+//    [super setRepresentedObject:representedObject];
+//
+//    // Update the view, if already loaded.
+//}
 
 @end
