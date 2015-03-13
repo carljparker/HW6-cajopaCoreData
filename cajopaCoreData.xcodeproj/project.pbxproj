@@ -18,6 +18,7 @@
 		87DB8BB91AA02C3400CA44D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87DB8BB81AA02C3400CA44D1 /* Images.xcassets */; };
 		87DB8BBC1AA02C3500CA44D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87DB8BBA1AA02C3500CA44D1 /* Main.storyboard */; };
 		87DB8BC81AA02C3500CA44D1 /* cajopaCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DB8BC71AA02C3500CA44D1 /* cajopaCoreDataTests.m */; };
+		87EB68551AB3295B00B87588 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 87EB68541AB3295B00B87588 /* Location.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		87DB8BC11AA02C3500CA44D1 /* cajopaCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cajopaCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DB8BC61AA02C3500CA44D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87DB8BC71AA02C3500CA44D1 /* cajopaCoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cajopaCoreDataTests.m; sourceTree = "<group>"; };
+		87EB68531AB3295B00B87588 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		87EB68541AB3295B00B87588 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +105,12 @@
 				87DB8BB81AA02C3400CA44D1 /* Images.xcassets */,
 				87DB8BBA1AA02C3500CA44D1 /* Main.storyboard */,
 				87DB8BB51AA02C3400CA44D1 /* cajopaCoreData.xcdatamodeld */,
-				87C31ED61AADE34900C7A90B /* Tag.h */,
-				87C31ED71AADE34900C7A90B /* Tag.m */,
 				87C31ED01AAAB03E00C7A90B /* Item.h */,
 				87C31ED11AAAB03E00C7A90B /* Item.m */,
+				87EB68531AB3295B00B87588 /* Location.h */,
+				87EB68541AB3295B00B87588 /* Location.m */,
+				87C31ED61AADE34900C7A90B /* Tag.h */,
+				87C31ED71AADE34900C7A90B /* Tag.m */,
 				870210E11AB1D60C00E37F87 /* ItemList.h */,
 				870210E21AB1D60C00E37F87 /* ItemList.m */,
 				87DB8BAB1AA02C3400CA44D1 /* Supporting Files */,
@@ -242,6 +247,7 @@
 				87C31ED21AAAB03E00C7A90B /* Item.m in Sources */,
 				87DB8BB71AA02C3400CA44D1 /* cajopaCoreData.xcdatamodeld in Sources */,
 				87DB8BB41AA02C3400CA44D1 /* ViewController.m in Sources */,
+				87EB68551AB3295B00B87588 /* Location.m in Sources */,
 				87C31ED81AADE34900C7A90B /* Tag.m in Sources */,
 				87DB8BB11AA02C3400CA44D1 /* main.m in Sources */,
 				87C31ED51AAAB2E800C7A90B /* ConfigurableCoreDataStack.m in Sources */,
