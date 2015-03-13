@@ -58,8 +58,6 @@
     
     [self.itemListTable reloadData];
     
-    NSLog(@"ViewDidLoad: %@", [self.carlsList itemTitles]);
-    
     // save the moc to persistent storage
     NSError *saveError = nil;
     
@@ -77,6 +75,15 @@
     self.carlsList = [ItemList itemListWithTitle:@"Carl's List" itemArray:allitems];
 
     [self.itemListTable reloadData];
+    
+    NSLog(@"ViewDidLoad: %@", [self.carlsList itemTitles]);
+    
+    for (Item * item in self.carlsList.allItems) {
+        NSLog(@"ViewDidLoad: %@", item.title );
+        for ( Tag *tag in item.tags ) {
+            NSLog(@"ViewDidLoad: %@", tag.name );
+        }
+    }
     
     [stack killCoreDataStack];
 
