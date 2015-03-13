@@ -13,13 +13,13 @@
 @interface Item : NSManagedObject
 
 @property (nonatomic, retain) NSString * detail;
-@property (nonatomic) double latitude;
-@property (nonatomic) double longitude;
 @property (nonatomic, retain) NSDecimalNumber * price;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * uuid;
 @property (nonatomic, retain) NSSet *images;
 @property (nonatomic, retain) NSSet *tags;
+@property (nonatomic, retain) NSSet *location;
+
 @end
 
 @interface Item (CoreDataGeneratedAccessors)
@@ -33,6 +33,9 @@
 - (void)removeTagsObject:(NSManagedObject *)value;
 - (void)addTags:(NSSet *)values;
 - (void)removeTags:(NSSet *)values;
+
+- (void)addLocationObject:(NSManagedObject *)value;
+- (void)removeLocationObject:(NSManagedObject *)value;
 
 // methods (additional)
 +(instancetype)itemWithTitle:(NSString *)title

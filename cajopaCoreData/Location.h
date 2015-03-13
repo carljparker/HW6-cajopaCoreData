@@ -10,4 +10,17 @@
 
 @interface Location : NSManagedObject
 
+@property (nonatomic) double latitude;    // HBO Office:  47.616645
+@property (nonatomic) double longitude;   // HBO Office: -122.327873
+
 @end
+
+@interface Location (CoreDataGeneratedAccessors)
+
+- (void)addItemsObject:(NSManagedObject *)value;
+- (void)removeItemsObject:(NSManagedObject *)value;
+- (void)addItems:(NSSet *)values;
+- (void)removeItems:(NSSet *)values;
+
+@end
+

@@ -10,4 +10,7 @@
 
 @implementation Location
 
+@dynamic latitude;
+@dynamic longitude;
+
 @end

@@ -14,13 +14,12 @@
 @implementation Item
 
 @dynamic detail;
-@dynamic latitude;
-@dynamic longitude;
 @dynamic price;
 @dynamic title;
 @dynamic uuid;
 @dynamic images;
 @dynamic tags;
+@dynamic location;
 
 +(instancetype)itemWithTitle:(NSString *)title
         managedObjectContext: (NSManagedObjectContext *) moc
