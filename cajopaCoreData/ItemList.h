@@ -17,6 +17,9 @@
 
 // methods
 + (instancetype) itemListWithTitle:(NSString *)title;
++ (instancetype) itemListWithTitle:(NSString *)title
+                         itemArray:(NSArray *)items;
+
 
 - (void) addItem:(Item *)item; // create and insert item if OK
 //- (void) replaceItemWithTitle:(NSInteger) idx

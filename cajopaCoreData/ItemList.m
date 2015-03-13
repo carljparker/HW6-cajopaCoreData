@@ -27,6 +27,17 @@
     return object;
 }
 
+
++ (instancetype) itemListWithTitle:(NSString *)title
+                         itemArray:(NSArray *)items;
+{
+    ItemList *object = [[self alloc] init];
+    object.listTitle = title;
+    object.theList = [NSMutableArray arrayWithArray:items];
+    return object;
+}
+
+
 // create and insert item if OK
 -(void) addItem:(NSString*) item {
     

@@ -26,9 +26,7 @@
 
     // Do any additional setup after loading the view.
     
-    // Create our list to manage the items
-    self.carlsList = [ItemList itemListWithTitle:@"Carl's List"];
-    
+   
     self.itemListTable.delegate = self;
     self.itemListTable.dataSource = self;
         
@@ -53,6 +51,9 @@
     
     [item addTags:[NSSet setWithArray:tagArray]];
     
+    // Create our list to manage the items
+    self.carlsList = [ItemList itemListWithTitle:@"Carl's List"];
+ 
     [self.carlsList addItem:item];
     
     [self.itemListTable reloadData];
