@@ -69,25 +69,15 @@
         [[NSApplication sharedApplication] presentError:saveError];
     }
     
-    NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    // fetch all the items we have so far
     NSError *fetchError = nil;
-    
+    NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
     NSArray *allitems = [self.moc executeFetchRequest:fr error:&fetchError];
     
     self.carlsList = [ItemList itemListWithTitle:@"Carl's List" itemArray:allitems];
+
     [self.itemListTable reloadData];
-    
-//
-//    for (Item *singleItem in allitems) {
-//        NSLog(@"%@", singleItem.title);
-//        for (Tag *singleTag in singleItem.tags) {
-//            NSLog( @"%@", singleTag.name);
-//        }
-//        [self.moc deleteObject:singleItem];
-//    }
-//    
-//    [self.moc save:nil];
-//    
+        
 //    [stack killCoreDataStack];
 
 }
