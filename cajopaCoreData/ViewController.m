@@ -77,8 +77,8 @@
     self.carlsList = [ItemList itemListWithTitle:@"Carl's List" itemArray:allitems];
 
     [self.itemListTable reloadData];
-        
-//    [stack killCoreDataStack];
+    
+    [stack killCoreDataStack];
 
 }
 
