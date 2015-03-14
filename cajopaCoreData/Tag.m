@@ -15,4 +15,20 @@
 @dynamic name;
 @dynamic item;
 
++(NSSet *) tagsWithNames:(NSArray *) names
+    managedObjectContext:(NSManagedObjectContext *)moc
+{
+    NSMutableArray *tags;
+    
+    for ( NSString *name in names ) {
+        // Add a Tag to our Item
+        Tag *tag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:moc];
+        tag.name = name;
+        [tags addObject:tag];
+    }
+    
+    return ( [NSSet setWithArray:tags] );
+    
+}
+
 @end

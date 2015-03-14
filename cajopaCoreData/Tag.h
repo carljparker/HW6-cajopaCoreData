@@ -15,6 +15,10 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *item;
+
++(NSSet *) tagsWithNames:(NSArray *) names
+    managedObjectContext:(NSManagedObjectContext *)moc;
+
 @end
 
 @interface Tag (CoreDataGeneratedAccessors)

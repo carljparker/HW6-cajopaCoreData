@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Location.h"
 
 
 @interface Item : NSManagedObject
@@ -18,7 +19,11 @@
 @property (nonatomic, retain) NSString * uuid;
 @property (nonatomic, retain) NSSet *images;
 @property (nonatomic, retain) NSSet *tags;
-@property (nonatomic, retain) NSSet *location;
+@property (nonatomic, retain) Location *location;
+
+// methods (additional)
++(instancetype)itemWithTitle:(NSString *)title
+        managedObjectContext:(NSManagedObjectContext *)moc;
 
 @end
 
@@ -33,13 +38,5 @@
 - (void)removeTagsObject:(NSManagedObject *)value;
 - (void)addTags:(NSSet *)values;
 - (void)removeTags:(NSSet *)values;
-
-- (void)addLocationObject:(NSManagedObject *)value;
-- (void)removeLocationObject:(NSManagedObject *)value;
-
-// methods (additional)
-+(instancetype)itemWithTitle:(NSString *)title
-        managedObjectContext:(NSManagedObjectContext *)moc;
-
 
 @end

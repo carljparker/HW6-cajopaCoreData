@@ -10,8 +10,14 @@
 
 @interface Location : NSManagedObject
 
-@property (nonatomic) double latitude;    // HBO Office:  47.616645
+@property (nonatomic) double latitude;    // HBO Office:   47.616645
 @property (nonatomic) double longitude;   // HBO Office: -122.327873
+
++(instancetype)locationWithLatitude:(double)Lat    // Make Lat and Long initial cap so that
+                          Longitude:(double)Long   // Long doesn't conflict with the type long
+        managedObjectContext:(NSManagedObjectContext *)moc;
+
++(instancetype)locationWithHBO:(NSManagedObjectContext *)moc;
 
 @end
 

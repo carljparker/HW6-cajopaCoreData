@@ -10,6 +10,7 @@
 #import "ConfigurableCoreDataStack.h"
 #import "ItemList.h"
 #import "Item.h"
+#import "location.h"
 #import "Tag.h"
 
 @interface ViewController ()
@@ -44,14 +45,15 @@
     // Create an NSManagedObject . . .
     Item *item = [Item itemWithTitle:@"cool toy" managedObjectContext:self.moc];
     
-    Tag *tag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:self.moc];
-    tag.name = @"lego";
+    // add a tag
+    NSArray *tags = @[ @"lego" ];
+    [item addTags:[Tag tagsWithNames:tags managedObjectContext:self.moc]];
     
-    NSArray * tagArray = @[ tag ];
+    // add a location
+    item.location = [Location locationWithHBO:self.moc];
+  
     
-    [item addTags:[NSSet setWithArray:tagArray]];
-    
-    // Create our list to manage the items
+    // Create a list to manage the items
     self.carlsList = [ItemList itemListWithTitle:@"Carl's List"];
  
     [self.carlsList addItem:item];
