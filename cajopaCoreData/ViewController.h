@@ -21,5 +21,7 @@
 
 @property (weak) IBOutlet NSButton *removeItemWithText;
 
+@property (weak) IBOutlet NSButton *itemProperties;
+
 @end
 

@@ -109,14 +109,8 @@
     
     NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
     NSViewController *vc = [sb instantiateControllerWithIdentifier:@"PropertiesVC"];
-    
-    // sheet from top of window
-    //    [self presentViewControllerAsSheet:vc];
-    
+     
     [self presentViewControllerAsModalWindow:vc];
-    
-//    NSButton *btn = sender;
-//    [self presentViewController:vc asPopoverRelativeToRect:btn.bounds ofView:btn preferredEdge:NSMaxYEdge behavior:NSPopoverBehaviorTransient];
     
     // hide
     // [self dismissController:vc];
@@ -129,6 +123,8 @@
     
     if ( idxSet.count == 0 ) {
         NSLog(@"Rows selected: Zero");
+        
+        
         [self updateUI];
     }
     else if ( idxSet.count == 1 ) {
@@ -138,6 +134,8 @@
         self.itemTitleText.stringValue = [self.carlsList itemTitles][idxSet.firstIndex];
         self.addTextAsItem.enabled = NO;
         self.removeItemWithText.enabled = YES;
+        
+        self.itemProperties.enabled = YES;
         
     }
     else {
@@ -152,6 +150,8 @@
         self.itemTitleText.stringValue = @"";
         self.addTextAsItem.enabled = NO;
         self.removeItemWithText.enabled = NO;
+        
+        self.itemProperties.enabled = NO;
         
     }
     

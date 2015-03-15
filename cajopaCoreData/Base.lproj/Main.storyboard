@@ -783,6 +783,7 @@
                     <connections>
                         <outlet property="addTextAsItem" destination="8Ak-1Q-8jV" id="Hkc-fx-Bgt"/>
                         <outlet property="itemListTable" destination="jiU-yx-dcU" id="axO-iB-X6n"/>
+                        <outlet property="itemProperties" destination="lZy-3X-oGa" id="Yie-5i-LVM"/>
                         <outlet property="itemTitleText" destination="0Hu-kG-WiY" id="lAx-O1-CNL"/>
                         <outlet property="removeItemWithText" destination="C7X-sb-8KR" id="tzi-lg-3mn"/>
                     </connections>
@@ -791,10 +792,10 @@
             </objects>
             <point key="canvasLocation" x="36" y="678.5"/>
         </scene>
-        <!--PropertiesVC-->
+        <!--Item Properties-->
         <scene sceneID="5bt-Nm-epQ">
             <objects>
-                <viewController storyboardIdentifier="PropertiesVC" id="9ZU-tY-UUI" customClass="PropertiesVC" sceneMemberID="viewController">
+                <viewController title="Item Properties" storyboardIdentifier="PropertiesVC" id="9ZU-tY-UUI" customClass="PropertiesVC" sceneMemberID="viewController">
                     <view key="view" id="NYt-qU-ePY">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
