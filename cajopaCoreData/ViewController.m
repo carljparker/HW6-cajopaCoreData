@@ -52,16 +52,10 @@
     // add a location
     item.location = [Location locationWithHBO:self.moc];
   
-    
-    // Create a list to manage the items
-    self.carlsList = [ItemList itemListWithTitle:@"Carl's List"];
- 
-    [self.carlsList addItem:item];
-    
-    [self.itemListTable reloadData];
-    
     // save the moc to persistent storage
     NSError *saveError = nil;
+    
+    [self updateUI];
     
     BOOL success = [self.moc save:&saveError];
     
@@ -69,15 +63,19 @@
         [[NSApplication sharedApplication] presentError:saveError];
     }
     
+    [stack killCoreDataStack];
+
+}
+
+- (void) updateUI {
     // fetch all the items we have so far
     NSError *fetchError = nil;
     NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
     NSArray *allitems = [self.moc executeFetchRequest:fr error:&fetchError];
     
     self.carlsList = [ItemList itemListWithTitle:@"Carl's List" itemArray:allitems];
-
-    [self.itemListTable reloadData];
     
+    // do some logging here
     NSLog(@"ViewDidLoad: %@", [self.carlsList itemTitles]);
     
     for (Item * item in self.carlsList.allItems) {
@@ -87,8 +85,9 @@
         }
     }
     
-    [stack killCoreDataStack];
-
+    // tell the table to redraw itself
+    [self.itemListTable reloadData];
+    
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
