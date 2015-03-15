@@ -9,11 +9,17 @@
 #import <Cocoa/Cocoa.h>
 #import "ConfigurableCoreDataStack.h"
 
-@interface ViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
+@interface ViewController : NSViewController <NSTextFieldDelegate, NSTableViewDelegate, NSTableViewDataSource>
 
 @property (nonatomic, readonly) NSManagedObjectContext *moc;
 
 @property (weak) IBOutlet NSTableView *itemListTable;
+
+@property (weak) IBOutlet NSTextField *itemTitleText;
+
+@property (weak) IBOutlet NSButton *addTextAsItem;
+
+@property (weak) IBOutlet NSButton *removeItemWithText;
 
 @end
 

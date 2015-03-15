@@ -96,6 +96,39 @@
     
 }
 
+- (void) tableViewSelectionDidChange:(NSNotification *)notification {
+    
+    NSIndexSet * idxSet = [self.itemListTable selectedRowIndexes];
+    
+    if ( idxSet.count == 0 ) {
+        NSLog(@"Rows selected: Zero");
+        [self updateUI];
+    }
+    else if ( idxSet.count == 1 ) {
+        NSLog(@"Rows selected: One");
+        NSLog(@"%@", [self.carlsList itemTitles][idxSet.firstIndex]);
+        
+        self.itemTitleText.stringValue = [self.carlsList itemTitles][idxSet.firstIndex];
+        self.removeItemWithText.enabled = YES;
+        
+    }
+    else {
+        NSLog(@"Rows selected: Multiple");
+        
+        [idxSet enumerateIndexesUsingBlock: ^(NSUInteger idx, BOOL *stop) {
+            NSLog(@"%@", [self.carlsList itemTitles][idx]);
+        }];
+        
+        // in multiselect state,
+        // not much is allowed
+        self.itemTitleText.stringValue = @"";
+        self.addTextAsItem.enabled = NO;
+        self.removeItemWithText.enabled = NO;
+        
+    }
+    
+}
+
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     // For this to work, Table Cell View in Main.storyboard

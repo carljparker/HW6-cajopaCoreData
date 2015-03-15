@@ -755,7 +755,10 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="addTextAsItem" destination="8Ak-1Q-8jV" id="Hkc-fx-Bgt"/>
                         <outlet property="itemListTable" destination="jiU-yx-dcU" id="axO-iB-X6n"/>
+                        <outlet property="itemTitleText" destination="0Hu-kG-WiY" id="lAx-O1-CNL"/>
+                        <outlet property="removeItemWithText" destination="C7X-sb-8KR" id="tzi-lg-3mn"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
