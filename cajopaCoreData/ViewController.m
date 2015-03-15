@@ -41,17 +41,23 @@
     ConfigurableCoreDataStack *stack = [[ConfigurableCoreDataStack alloc] initWithConfiguration:config];
     
     self.moc = stack.managedObjectContext;
-    
-    // Create an NSManagedObject . . .
-    Item *item = [Item itemWithTitle:@"cool toy" managedObjectContext:self.moc];
-    
+
     // add a tag
-    NSArray *tags = @[ @"lego" ];
-    [item addTags:[Tag tagsWithNames:tags managedObjectContext:self.moc]];
-    
-    // add a location
-    item.location = [Location locationWithHBO:self.moc];
-  
+    NSArray *tags = @[ @"Lego", @"Star Wars" ];
+    NSArray *itemNames = @[ @"Death Star", @"Millennium Falcon" ];
+
+    for (NSString *itemName in itemNames) {
+        
+        Item *item = [Item itemWithTitle:itemName managedObjectContext:self.moc];
+
+        // add tags
+        [item addTags:[Tag tagsWithNames:tags managedObjectContext:self.moc]];
+
+        // add a location
+        item.location = [Location locationWithHBO:self.moc];
+        
+    }
+
     // save the moc to persistent storage
     NSError *saveError = nil;
     
