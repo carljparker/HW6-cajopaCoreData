@@ -96,6 +96,14 @@
     
 }
 
+- (IBAction)addNewItem:(id)sender {
+
+}
+
+- (IBAction)removeSelectedItems:(id)sender {
+
+}
+
 - (void) tableViewSelectionDidChange:(NSNotification *)notification {
     
     NSIndexSet * idxSet = [self.itemListTable selectedRowIndexes];
@@ -109,6 +117,7 @@
         NSLog(@"%@", [self.carlsList itemTitles][idxSet.firstIndex]);
         
         self.itemTitleText.stringValue = [self.carlsList itemTitles][idxSet.firstIndex];
+        self.addTextAsItem.enabled = NO;
         self.removeItemWithText.enabled = YES;
         
     }
