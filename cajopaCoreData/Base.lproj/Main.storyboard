@@ -758,6 +758,26 @@
                                     <action selector="removeSelectedItems:" target="XfG-lQ-9wD" id="AP0-sK-FV1"/>
                                 </connections>
                             </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Jw-Rj-avb">
+                                <rect key="frame" x="345" y="198" width="150" height="34"/>
+                                <buttonCell key="cell" type="square" title="Item Properties" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wTL-kX-XVE">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="18"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeSelectedItems:" target="XfG-lQ-9wD" id="s8U-Hc-rZY"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lZy-3X-oGa">
+                                <rect key="frame" x="345" y="198" width="150" height="34"/>
+                                <buttonCell key="cell" type="square" title="Item Properties" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PUs-gi-i6l">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="18"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clickEditProperties:" target="XfG-lQ-9wD" id="Uma-9A-fJF"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -769,7 +789,20 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301" y="683.5"/>
+            <point key="canvasLocation" x="36" y="678.5"/>
+        </scene>
+        <!--PropertiesVC-->
+        <scene sceneID="5bt-Nm-epQ">
+            <objects>
+                <viewController storyboardIdentifier="PropertiesVC" id="9ZU-tY-UUI" customClass="PropertiesVC" sceneMemberID="viewController">
+                    <view key="view" id="NYt-qU-ePY">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="cND-vX-y4L" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="544" y="584"/>
         </scene>
     </scenes>
 </document>

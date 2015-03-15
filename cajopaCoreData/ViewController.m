@@ -104,6 +104,25 @@
 
 }
 
+- (IBAction)clickEditProperties:(id)sender {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+    NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+    NSViewController *vc = [sb instantiateControllerWithIdentifier:@"PropertiesVC"];
+    
+    // sheet from top of window
+    //    [self presentViewControllerAsSheet:vc];
+    
+    [self presentViewControllerAsModalWindow:vc];
+    
+//    NSButton *btn = sender;
+//    [self presentViewController:vc asPopoverRelativeToRect:btn.bounds ofView:btn preferredEdge:NSMaxYEdge behavior:NSPopoverBehaviorTransient];
+    
+    // hide
+    // [self dismissController:vc];
+    
+}
+
 - (void) tableViewSelectionDidChange:(NSNotification *)notification {
     
     NSIndexSet * idxSet = [self.itemListTable selectedRowIndexes];
