@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Parker, Carl (HBO). All rights reserved.
 //
 
+@import CoreData;
+
 #import <Cocoa/Cocoa.h>
 #import "Item.h"
 #import "Tag.h"

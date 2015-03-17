@@ -10,6 +10,8 @@
 
 @interface PropertiesVC ()
 
+@property (nonatomic, readwrite) NSManagedObjectContext * moc;
+
 @end
 
 @implementation PropertiesVC
@@ -22,6 +24,13 @@
     self.tagListTable.dataSource = self;
     
     self.itemTitleText.stringValue = self.displayedItem.title;
+    
+    NSNumberFormatter *formatter = [NSNumberFormatter new];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    
+    self.latText.stringValue = [formatter stringFromNumber:[NSNumber numberWithDouble:self.displayedItem.location.latitude]];
+    self.longText.stringValue = [formatter stringFromNumber:[NSNumber numberWithDouble:self.displayedItem.location.longitude]];
+    self.moc = self.displayedItem.managedObjectContext;
 
 }
 
@@ -29,7 +38,7 @@
     // fetch all the tags we have so far
     NSError *fetchError = nil;
     NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Tag"];
-    NSArray *allTags; //= [self.moc executeFetchRequest:fr error:&fetchError];
+    NSArray *allTags = [self.moc executeFetchRequest:fr error:&fetchError];
     
     // do some logging here
     NSLog(@"ViewDidLoad: %@", allTags);
@@ -80,7 +89,7 @@
     // fetch all the tags we have so far
     NSError *fetchError = nil;
     NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Tag"];
-    NSArray *allTags; // = [self.moc executeFetchRequest:fr error:&fetchError];
+    NSArray *allTags = [self.moc executeFetchRequest:fr error:&fetchError];
 
     
     // For this to work, Table Cell View in Main.storyboard
