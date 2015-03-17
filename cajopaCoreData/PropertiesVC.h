@@ -7,7 +7,24 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Item.h"
+#import "Tag.h"
+#import "Location.h"
 
-@interface PropertiesVC : NSViewController
+@interface PropertiesVC : NSViewController <NSTextFieldDelegate, NSTableViewDelegate, NSTableViewDataSource>
+
+@property (weak) IBOutlet NSTableView *tagListTable;
+
+@property (weak) IBOutlet NSTextField *itemTitleText;
+
+@property (weak) IBOutlet NSTextField *tagNameText;
+
+@property (weak) IBOutlet NSTextField *latText;
+
+@property (weak) IBOutlet NSTextField *longText;
+
+@property (nonatomic, retain) NSArray * allTags;
+
+@property (nonatomic, readwrite) Item *displayedItem;
 
 @end

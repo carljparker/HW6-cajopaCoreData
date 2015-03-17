@@ -12,11 +12,14 @@
 #import "Item.h"
 #import "location.h"
 #import "Tag.h"
+#import "PropertiesVC.h"
 
 @interface ViewController ()
 
-@property (nonatomic, readwrite) NSManagedObjectContext *moc;
-@property (nonatomic, readwrite) ItemList *carlsList;
+@property (nonatomic, readwrite) NSManagedObjectContext * moc;
+@property (nonatomic, readwrite) ItemList * carlsList;
+
+@property (nonatomic, readwrite) Item * selectedItem;
 
 @end
 
@@ -73,6 +76,16 @@
 
 }
 
+- (IBAction)addNewItem:(id)sender {
+    
+}
+
+- (IBAction)removeSelectedItems:(id)sender {
+    
+}
+
+
+
 - (void) updateUI {
     // fetch all the items we have so far
     NSError *fetchError = nil;
@@ -96,19 +109,13 @@
     
 }
 
-- (IBAction)addNewItem:(id)sender {
-
-}
-
-- (IBAction)removeSelectedItems:(id)sender {
-
-}
-
 - (IBAction)clickEditProperties:(id)sender {
     NSLog(@"%s", __PRETTY_FUNCTION__);
     
     NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
     NSViewController *vc = [sb instantiateControllerWithIdentifier:@"PropertiesVC"];
+    
+    ((PropertiesVC *)vc).displayedItem = self.selectedItem;
      
     [self presentViewControllerAsModalWindow:vc];
     
@@ -130,6 +137,8 @@
     else if ( idxSet.count == 1 ) {
         NSLog(@"Rows selected: One");
         NSLog(@"%@", [self.carlsList itemTitles][idxSet.firstIndex]);
+        
+        self.selectedItem = [self.carlsList allItems][idxSet.firstIndex];
         
         self.itemTitleText.stringValue = [self.carlsList itemTitles][idxSet.firstIndex];
         self.addTextAsItem.enabled = NO;

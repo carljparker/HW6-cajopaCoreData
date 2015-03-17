@@ -838,8 +838,7 @@
                                     <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="xau-in-fSl">
-                                            <rect key="frame" x="0.0" y="0.0" width="238" height="134"/>
+                                        <tableView identifier="tagListTable" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="xau-in-fSl">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -898,8 +897,8 @@
                                 <font key="titleFont" metaFont="system"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YmM-uv-PH3">
-                                <rect key="frame" x="148" y="195" width="38" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tags" id="hID-Qo-S5a">
+                                <rect key="frame" x="148" y="195" width="63" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Add Tag" id="hID-Qo-S5a">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -923,6 +922,13 @@
                             </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="itemTitleText" destination="kfD-o3-uM0" id="7IX-Qd-cDn"/>
+                        <outlet property="latText" destination="kcI-36-EcY" id="mHJ-2S-cRg"/>
+                        <outlet property="longText" destination="qmS-V0-R2a" id="4TZ-sY-fFc"/>
+                        <outlet property="tagListTable" destination="xau-in-fSl" id="lzr-cX-yJV"/>
+                        <outlet property="tagNameText" destination="h9b-3v-TRs" id="Of5-Je-bue"/>
+                    </connections>
                 </viewController>
                 <customObject id="cND-vX-y4L" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
