@@ -920,7 +920,7 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7VD-Zc-kHB">
-                                <rect key="frame" x="289" y="103" width="147" height="32"/>
+                                <rect key="frame" x="289" y="104" width="147" height="32"/>
                                 <buttonCell key="cell" type="push" title="Update Lat-Long" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DBd-BH-c6f">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -952,8 +952,10 @@
                         <outlet property="itemTitleText" destination="kfD-o3-uM0" id="7IX-Qd-cDn"/>
                         <outlet property="latText" destination="kcI-36-EcY" id="mHJ-2S-cRg"/>
                         <outlet property="longText" destination="qmS-V0-R2a" id="4TZ-sY-fFc"/>
+                        <outlet property="showLocationBtn" destination="Z8A-uQ-nWV" id="t2P-oS-KGC"/>
                         <outlet property="tagListTable" destination="xau-in-fSl" id="lzr-cX-yJV"/>
                         <outlet property="tagNameText" destination="h9b-3v-TRs" id="Of5-Je-bue"/>
+                        <outlet property="updateLatLongBtn" destination="7VD-Zc-kHB" id="hia-qY-pf1"/>
                     </connections>
                 </viewController>
                 <customObject id="cND-vX-y4L" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

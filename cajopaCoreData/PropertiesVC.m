@@ -53,6 +53,11 @@
     
     NSLog(@"updateUI: Entering . . .");
     
+    if( [self.latText.stringValue isEqualToString:@""] || [self.longText.stringValue isEqualToString:@""] ) {
+        self.updateLatLongBtn.enabled = NO;
+        self.showLocationBtn.enabled = NO;
+    };
+    
     // fetch all the tags we have so far
     NSError *fetchError = nil;
     NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Tag"];

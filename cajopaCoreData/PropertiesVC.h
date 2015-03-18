@@ -25,6 +25,10 @@
 
 @property (weak) IBOutlet NSTextField *longText;
 
+@property (weak) IBOutlet NSButton *updateLatLongBtn;
+
+@property (weak) IBOutlet NSButton *showLocationBtn;
+
 @property (nonatomic, readonly) NSArray * allTags;
 
 @property (nonatomic, readwrite) Item *displayedItem;
