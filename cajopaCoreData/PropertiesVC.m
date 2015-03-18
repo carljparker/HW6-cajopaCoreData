@@ -41,6 +41,14 @@
     [self dismissController:self];
 }
 
+- (IBAction)showLocation:(id)sender {
+    NSLog(@"showLocation: Entering . . . ");
+    
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://maps.google.com/?q=47.616645,-122.327873"]];
+    
+    NSLog(@"showLocation: Entering . . . ");
+}
+
 - (void) updateUI {
     
     NSLog(@"updateUI: Entering . . .");
