@@ -36,6 +36,10 @@
 
 }
 
+- (IBAction)closePropVC:(id)sender {
+    [self dismissController:self];
+}
+
 - (void) updateUI {
     // fetch all the tags we have so far
     NSError *fetchError = nil;
