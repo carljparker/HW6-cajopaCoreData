@@ -18,12 +18,13 @@
 +(NSSet *) tagsWithNames:(NSArray *) names
     managedObjectContext:(NSManagedObjectContext *)moc
 {
-    NSMutableArray *tags;
+    NSMutableArray *tags = [NSMutableArray new];
     
     for ( NSString *name in names ) {
         // Add a Tag to our Item
         Tag *tag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:moc];
         tag.name = name;
+        NSLog(@"tagsWithNames: %@", tag.name);
         [tags addObject:tag];
     }
     

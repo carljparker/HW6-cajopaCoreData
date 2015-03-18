@@ -11,6 +11,7 @@
 @interface PropertiesVC ()
 
 @property (nonatomic, readwrite) NSManagedObjectContext * moc;
+@property (nonatomic, readwrite) NSMutableArray * allTags;
 
 @end
 
@@ -41,19 +42,26 @@
 }
 
 - (void) updateUI {
+    
+    NSLog(@"updateUI: Entering . . .");
+    
     // fetch all the tags we have so far
     NSError *fetchError = nil;
     NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Tag"];
     
     self.allTags = [self.moc executeFetchRequest:fr error:&fetchError];
     
-    for (Tag * tag in self.allTags) {
+    self.allTags = [NSMutableArray new];
+    
+    for (Tag * tag in self.displayedItem.tags) {
         NSLog(@"updateUI: %@", tag.name );
+        [(NSMutableArray *) self.allTags addObject:tag];
     }
     
     // tell the table to redraw itself
     [self.tagListTable reloadData];
-    
+
+    NSLog(@"updateUI: Leaving . . .");    
 }
 
 - (void) tableViewSelectionDidChange:(NSNotification *)notification {

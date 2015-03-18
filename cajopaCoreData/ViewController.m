@@ -54,7 +54,17 @@
         Item *item = [Item itemWithTitle:itemName managedObjectContext:self.moc];
 
         // add tags
-        [item addTags:[Tag tagsWithNames:tags managedObjectContext:self.moc]];
+        NSSet * newTags = [Tag tagsWithNames:tags managedObjectContext:self.moc];
+
+        for (Tag *tag in newTags) {
+            NSLog(@"viewDidLoad: %@", tag.name);
+        }
+        
+        [item addTags:newTags];
+        
+        for (Tag *tag in item.tags) {
+            NSLog(@"viewDidLoad: %@", tag.name);
+        }
 
         // add a location
         item.location = [Location locationWithHBO:self.moc];
@@ -84,8 +94,6 @@
     
 }
 
-
-
 - (void) updateUI {
     // fetch all the items we have so far
     NSError *fetchError = nil;
@@ -95,12 +103,12 @@
     self.carlsList = [ItemList itemListWithTitle:@"Carl's List" itemArray:allitems];
     
     // do some logging here
-    NSLog(@"ViewDidLoad: %@", [self.carlsList itemTitles]);
+    NSLog(@"updateUI: %@", [self.carlsList itemTitles]);
     
     for (Item * item in self.carlsList.allItems) {
-        NSLog(@"ViewDidLoad: %@", item.title );
+        NSLog(@"updateUI: %@", item.title );
         for ( Tag *tag in item.tags ) {
-            NSLog(@"ViewDidLoad: %@", tag.name );
+            NSLog(@"updateUI: %@", tag.name );
         }
     }
     
@@ -118,10 +126,7 @@
     ((PropertiesVC *)vc).displayedItem = self.selectedItem;
      
     [self presentViewControllerAsModalWindow:vc];
-    
-    // hide
-    // [self dismissController:vc];
-    
+        
 }
 
 - (void) tableViewSelectionDidChange:(NSNotification *)notification {

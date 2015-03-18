@@ -25,7 +25,7 @@
 
 @property (weak) IBOutlet NSTextField *longText;
 
-@property (nonatomic, retain) NSArray * allTags;
+@property (nonatomic, readonly) NSArray * allTags;
 
 @property (nonatomic, readwrite) Item *displayedItem;
 
