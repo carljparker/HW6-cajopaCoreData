@@ -40,6 +40,7 @@
 - (IBAction)addTag:(id)sender {
     NSSet *newTags = [Tag tagsWithNames:@[ self.tagNameText.stringValue ]
                    managedObjectContext:self.moc];
+    
     [self.displayedItem addTags:newTags];
     [self updateUI];
 }

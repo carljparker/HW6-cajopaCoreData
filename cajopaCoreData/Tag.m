@@ -18,17 +18,42 @@
 +(NSSet *) tagsWithNames:(NSArray *) names
     managedObjectContext:(NSManagedObjectContext *)moc
 {
-    NSMutableArray *tags = [NSMutableArray new];
+    
+    NSError *fetchError = nil;
+    
+    NSFetchRequest *fr = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:moc];
+    [fr setEntity:entityDescription];
+    
+    NSMutableArray *newTags = [NSMutableArray new];
     
     for ( NSString *name in names ) {
         // Add a Tag to our Item
-        Tag *tag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:moc];
-        tag.name = name;
-        NSLog(@"tagsWithNames: %@", tag.name);
-        [tags addObject:tag];
+        
+        // Need to ensure that we don't already have a
+        // tag with that name.
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name = %@ )", name];
+        [fr setPredicate:predicate];
+        
+        NSArray *tagsWithName = [moc executeFetchRequest:fr error:&fetchError];
+        
+        if (tagsWithName.count == 0) {
+            // add a new tag with this name
+            Tag *newTag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:moc];
+            newTag.name = name;
+            NSLog(@"tagsWithNames: %@", newTag.name);
+            [newTags addObject:newTag];
+        }
+        else {
+            // otherwise, use the Tag object returned by the fetch
+            // TODO: we should probably add check to ensure that exactly
+            // one tag was returned.
+            [newTags addObject:tagsWithName[0]];
+        }
     }
     
-    return ( [NSSet setWithArray:tags] );
+    return ( [NSSet setWithArray:newTags] );
     
 }
 
