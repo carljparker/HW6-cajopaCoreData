@@ -41,10 +41,35 @@
     [self dismissController:self];
 }
 
+- (IBAction)updateLatLong:(id)sender {
+    self.displayedItem.location.latitude = [self.latText.stringValue doubleValue];
+    self.displayedItem.location.longitude = [self.longText.stringValue doubleValue];
+}
+
 - (IBAction)showLocation:(id)sender {
     NSLog(@"showLocation: Entering . . . ");
     
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://maps.google.com/?q=47.616645,-122.327873"]];
+    // We will show whatever is stored in the item's location.
+    // This might not be what is shown in the property sheet if
+    // the user has changed the values, but not yet clicked
+    // the update button.
+    NSNumberFormatter *formatter = [NSNumberFormatter new];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+
+    NSString *lat = [formatter stringFromNumber:[NSNumber numberWithDouble:self.displayedItem.location.latitude]];
+    NSString *lon = [formatter stringFromNumber:[NSNumber numberWithDouble:self.displayedItem.location.longitude]];
+    
+    NSMutableString *coord = [NSMutableString new];
+    
+    [coord appendString:@"http://maps.google.com/?q="];
+    [coord appendString:lat];
+    [coord appendString:@","];
+    [coord appendString:lon];
+    
+    NSLog(@"showLocation: %@", coord);
+    
+    
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:coord]];
     
     NSLog(@"showLocation: Entering . . . ");
 }
@@ -83,7 +108,6 @@
     
     if ( idxSet.count == 0 ) {
         NSLog(@"PropertiesVC: Rows selected: Zero");
-        
         
         [self updateUI];
     }
