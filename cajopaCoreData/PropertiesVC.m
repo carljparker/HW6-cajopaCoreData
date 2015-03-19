@@ -50,8 +50,7 @@
 }
 
 - (IBAction)updateLatLong:(id)sender {
-    self.displayedItem.location.latitude = [self.latText.stringValue doubleValue];
-    self.displayedItem.location.longitude = [self.longText.stringValue doubleValue];
+    self.displayedItem.location = [Location locationWithLatitude:[self.latText.stringValue doubleValue] Longitude:[self.longText.stringValue doubleValue] managedObjectContext:self.moc];
 }
 
 - (IBAction)showLocation:(id)sender {

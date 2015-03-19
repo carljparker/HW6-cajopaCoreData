@@ -18,12 +18,30 @@
                           Longitude:(double)Long   // Long doesn't conflict with the type long
                managedObjectContext:(NSManagedObjectContext *)moc
 {
-    // Add a Location
-    Location *location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:moc];
-    location.latitude  = Lat;
-    location.longitude = Long;
     
-    return (location);
+    NSError *fetchError = nil;
+    
+    NSFetchRequest *fr = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Location" inManagedObjectContext:moc];
+    [fr setEntity:entityDescription];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"( ( latitude == %f ) && ( longitude == %f ) )", Lat, Long];
+    [fr setPredicate:predicate];
+    
+    NSArray *locationsWithLatLong = [moc executeFetchRequest:fr error:&fetchError];
+    
+    if (locationsWithLatLong.count == 0) {
+
+        // Add a Location
+        Location *location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:moc];
+        location.latitude  = Lat;
+        location.longitude = Long;
+        return (location);
+    }
+    else {
+        return (locationsWithLatLong[0]);
+    }
     
 }
 

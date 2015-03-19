@@ -33,7 +33,7 @@
         
         // Need to ensure that we don't already have a
         // tag with that name.
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name = %@ )", name];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name == %@ )", name];
         [fr setPredicate:predicate];
         
         NSArray *tagsWithName = [moc executeFetchRequest:fr error:&fetchError];
