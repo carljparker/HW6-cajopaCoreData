@@ -24,11 +24,29 @@
 +(instancetype)itemWithTitle:(NSString *)title
         managedObjectContext: (NSManagedObjectContext *) moc
 {
-    Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:moc];
     
-    item.title = title;
+    NSError *fetchError = nil;
     
-    return item;
+    NSFetchRequest *fr = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Item" inManagedObjectContext:moc];
+    [fr setEntity:entityDescription];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(title = %@ )", title];
+    [fr setPredicate:predicate];
+    
+    NSArray *itemsWithTitle = [moc executeFetchRequest:fr error:&fetchError];
+ 
+    if (itemsWithTitle.count == 0) {
+    
+        Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:moc];
+        item.title = title;
+        return item;
+    }
+    else {
+        // return the item from the fetch
+        return itemsWithTitle[0];
+    }
 }
 
 @end

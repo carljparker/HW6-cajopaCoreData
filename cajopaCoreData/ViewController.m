@@ -87,11 +87,12 @@
 }
 
 - (IBAction)addNewItem:(id)sender {
-    
+    Item *item = [Item itemWithTitle:self.itemTitleText.stringValue managedObjectContext:self.moc];
+    [self updateUI];
 }
 
 - (IBAction)removeSelectedItems:(id)sender {
-    
+    NSLog(@"removeSelectedItems: Sorry, Bro. The list of items is all immutable and stuff");
 }
 
 - (void) updateUI {
