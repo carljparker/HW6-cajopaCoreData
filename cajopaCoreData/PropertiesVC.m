@@ -37,6 +37,13 @@
 
 }
 
+- (IBAction)addTag:(id)sender {
+    NSSet *newTags = [Tag tagsWithNames:@[ self.tagNameText.stringValue ]
+                   managedObjectContext:self.moc];
+    [self.displayedItem addTags:newTags];
+    [self updateUI];
+}
+
 - (IBAction)closePropVC:(id)sender {
     [self dismissController:self];
 }
@@ -67,7 +74,6 @@
     [coord appendString:lon];
     
     NSLog(@"showLocation: %@", coord);
-    
     
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:coord]];
     
